@@ -78,6 +78,15 @@ public class StringManipulatorTestingClass {
 	public void testContainsSubstringFalse(){
 		assertEquals(false, stringManipulator2.containsSubstring("It's Arnob", "  Arnob"));
 	}
+	@Test
+	public void testContainsSubstringBiggerThanMainString(){
+		assertEquals(false, stringManipulator2.containsSubstring("Arnob", "  Arnob"));
+	}
+	
+	@Test
+	public void testContainsSubstringBiggerSameString(){
+		assertEquals(true, stringManipulator2.containsSubstring("Arnob", "Arnob"));
+	}
 	
 	@Test
 	public void testMergeString(){
@@ -87,6 +96,10 @@ public class StringManipulatorTestingClass {
 	@Test
 	public void testReverseWords(){
 		assertEquals("Arnob. am I", stringManipulator2.reverseWords("I am Arnob."));
+	}
+	@Test
+	public void testReverseWordsNull(){
+		assertEquals("", stringManipulator2.reverseWords(""));
 	}
 	
 	@Test
@@ -113,6 +126,7 @@ public class StringManipulatorTestingClass {
 	public void testRemoveExtraSpaceWithPunctuations(){
 		assertEquals("Currently, doing lab .", stringManipulator3.removeExtraSpaces("Currently,   doing lab   .     "));
 	}
+	
 	
 	
 
